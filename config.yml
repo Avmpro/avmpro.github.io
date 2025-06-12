@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: Avmpro/avmpro.github.io # Il tuo repo GitHub
+  branch: main # o master, a seconda del tuo repo
+
+media_folder: "assets/uploads" # Dove caricare immagini
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "Offerte"
+    folder: "_posts" # cartella dove metti i post markdown
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Data", name: "date", widget: "datetime"}
+      - {label: "Link Affiliato", name: "affiliate_link", widget: "string"}
+      - {label: "Contenuto", name: "body", widget: "markdown"}
